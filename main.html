@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Simulator</title>
+    <link rel="icon" href="sources/favicon.png" type="image/png">
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Tahoma, sans-serif;
+        }
+        .hero-section {
+            display: block;
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 30vw;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url("sources/background.png");
+            background-size: cover;
+            background-position: center;
+            box-shadow: 4px 0 5px 0 rgba(0, 0, 0, 0.25);
+        }
+        .hero-section .logo {
+            display: block;
+            position: relative;
+            left: 1em;
+            top: 1em;
+            width: 100px;
+            z-index: 1;
+        }
+        .copy {
+            margin: 48px 16px;
+        }
+        .copy h1 {
+            font-size: 18px;
+        }
+        .copy h2 {
+            font-size: 12px;
+            font-weight: 300;
+            margin: 24px 0;
+        }
+        .copy ul {
+            font-size: 12px;
+            list-style: none;
+            padding: 0;
+        }
+        .simulator-section {
+            margin-left: 30vw;
+            padding: 56px 80px;
+        }
+        .simulator-section .input {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+        }
+        .simulator-section .answer {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <img src="sources/logo.png" alt="logo" class="logo">
+        <div class="copy">
+            <h1 class="headline">Start earning with a high-demand, easy-to-sell product</h1>
+            <h2 class="subheadline">Build an extra income with no hassle, attractive commissions, and full support to help you sell confidently.</h2>
+            <ul class="benefits">
+                <li>✔ Highly accepted product, easy to offer in everyday situations.</li>
+                <li>✔ Boost your earnings quickly.</li>
+                <li>✔ Simple explanation, clear value.</li>
+                <li>✔ Extra income without disrupting your routine.</li>
+                <li>✔ No complicated contracts or upfront requirements.</li>
+            </ul>
+        </div>
+    </section>
+    <section class="simulator-section">
+        <form class="input">
+            <label for="sales">Quantity of products sold.</label>
+            <input type="number" name="sales" id="number" required>
+            <button type="submit">Calculate</button>
+        </form>
+        <div class="answer">
+            <p>With 1000 sales you will win.</p>
+            <p>$ 10.000</p>
+            <p>Estimated earnings. Actual results may vary based on your sales performance, volume, applicable taxes, and any platform or payment processing fees.</p>
+        </div>
+    </section>
+</body>
+</html>
