@@ -51,14 +51,65 @@
         .simulator-section {
             margin-left: 30vw;
             padding: 56px 80px;
+            display: grid;
+            row-gap: 48px;
         }
         .simulator-section .input {
             display: flex;
             flex-direction: column;
-            border: 1px solid black;
+            border: 1px solid #F5F5F5;
+            box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+            padding: 36px 72px;
+            row-gap: 12px;
+        }
+        .simulator-section .input label {
+            font-size: 12px;
+            color: #242424;
+        }
+        .simulator-section .input input {
+            font-family: Tahoma, sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: black;
+            border: none;
+            border-bottom: 1px solid #252525;
+            outline: none;
+        }
+        .simulator-section .input input:focus {
+            border-color: black;
+        }
+        .simulator-section .input button {
+            font-family: Tahoma, sans-serif;
+            font-size: 16px;
+            background-color: #318F5C;
+            color: white;
+            font-weight: 700;
+            border: 1px solid #909090;
+            padding: 12px 0;
+            cursor: pointer;
+            box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+        }
+        .simulator-section .input button:hover {
+            border-color: #505050;
         }
         .simulator-section .answer {
-            border: 1px solid black;
+            border: 1px solid #F5F5F5;
+            box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+            padding: 36px 72px;
+            color: #242424;
+        }
+        .simulator-section .answer strong {
+            font-size: 22px;
+            color: black;
+        }
+        .simulator-section .answer .value {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1A8048;
+        }
+        .simulator-section .answer .footer {
+            color: #575F6E;
+            font-size: 10px;
         }
     </style>
 </head>
@@ -84,9 +135,9 @@
             <button type="submit">Calculate</button>
         </form>
         <div class="answer">
-            <p>With 1000 sales you will win.</p>
-            <p>$ 10.000</p>
-            <p>Estimated earnings. Actual results may vary based on your sales performance, volume, applicable taxes, and any platform or payment processing fees.</p>
+            <p>With <strong>1000</strong> sales you will win.</p>
+            <p class="value">$ 10.000</p>
+            <p class="footer">Estimated earnings. Actual results may vary based on your sales performance, volume, applicable taxes, and any platform or payment processing fees.</p>
         </div>
     </section>
 </body>
