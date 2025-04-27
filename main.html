@@ -6,6 +6,7 @@
     <title>Sales Simulator</title>
     <link rel="icon" href="sources/favicon.png" type="image/png">
     <style>
+        /* Desktop */
         body {
             box-sizing: border-box;
             margin: 0;
@@ -111,6 +112,32 @@
             color: #575F6E;
             font-size: 10px;
         }
+        /* Tablet */
+        @media (max-width: 1024px) {
+        .hero-section {
+            display: none;
+        }
+        .simulator-section {
+            margin-left: 0;
+            padding: 0;
+        }
+        .simulator-section .input button {
+            font-size: 14px;
+        }
+        }
+        /* Smatphone (até 600px) */
+        @media (max-width: 1024px) {
+        .hero-section {
+            display: none;
+        }
+        .simulator-section {
+            margin-left: 0;
+            padding: 0;
+        }
+        .simulator-section .input button {
+            font-size: 14px;
+        }
+        }
     </style>
 </head>
 <body>
@@ -131,14 +158,24 @@
     <section class="simulator-section">
         <form class="input">
             <label for="sales">Quantity of products sold.</label>
-            <input type="number" name="sales" id="number" required>
-            <button type="submit">Calculate</button>
+            <input type="number" name="sales" id="sales" placeholder="0" min="0" required>
+            <button type="submit" id="calculate">Calculate</button>
         </form>
         <div class="answer">
-            <p>With <strong>1000</strong> sales you will win.</p>
-            <p class="value">$ 10.000</p>
+            <p>With <strong id="sales-element">0</strong> sales you will win.</p>
+            <p class="value" id="answer">$ 0,00</p>
             <p class="footer">Estimated earnings. Actual results may vary based on your sales performance, volume, applicable taxes, and any platform or payment processing fees.</p>
         </div>
     </section>
+    <script>
+        const commissionPerSale = 20;
+        document.getElementById("calculate").addEventListener("click", (event) => {
+            event.preventDefault() // prevents the form from reloagind the page
+            const sales = parseInt(document.getElementById("sales").value) || 0
+            const commission = commissionPerSale * sales
+            document.getElementById("sales-element").textContent = sales.toLocaleString("pt-BR")
+            document.getElementById("answer").textContent = `$ ${commission.toLocaleString("pt-BR", {minimumFractionDigits: 2})}`
+        });        
+    </script>
 </body>
 </html>
